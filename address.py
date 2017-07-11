@@ -1,4 +1,9 @@
+import json
+
 address = {'Dan': 'LA', 'Jay': 'Orange County', 'Steve': 'Torrance'}
+
+
+
 
 def contact(stuff):
     print("""
@@ -27,6 +32,11 @@ def contact(stuff):
 
         else:
             address[x] = input('City: ')
+
+            print("Writing and closing text file")
+
+            with open('address.txt', 'w') as file:
+                file.write(json.dumps(address))
 
     if stuff == "3":
         x = input('Name: ')
